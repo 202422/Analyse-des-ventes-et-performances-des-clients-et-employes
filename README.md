@@ -1,5 +1,5 @@
 # Description du projet
- **Description du projet**
+
 
 Dans le cadre de ce projet, j’ai travaillé sur l’analyse des données commerciales issues de la base de données **classicmodels**, une base représentant les activités d’un détaillant de maquettes de voitures classiques. Cette base contient des informations complètes sur les **clients**, leurs **commandes**, leurs **paiements**, ainsi que sur les **produits**, leur **classification**, les **employés** et les **bureaux**.
 
@@ -10,6 +10,31 @@ L’objectif principal du projet est **d’extraire des informations pertinentes
 * **Python** a été mobilisé pour effectuer des **analyses statistiques** avancées.
 * **SQL** pour des jointures complexes sur les tables
 
----
+
 
 ![](/Ressources/Visuel.png)
+
+
+## Architecture du répertoire
+
+
+```plaintext
+
+│   Objectifs_du_projet_Data_Analyse.pdf
+│   README.md
+│
+├───Analyse statistique
+│       Hypothesis_Testing.ipynb
+│
+├───Base de données MySQL
+│       classicmodels.zip
+│       Création_de_la_base_de_données.pdf
+│       Description_Classic_model_Database.pdf
+│
+├───PowerBI
+│       Analyse de vente et performances des employés et des clients.pbix
+│
+└───Ressources
+        Visuel.png
+
+```
