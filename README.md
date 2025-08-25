@@ -8,6 +8,7 @@ L’objectif principal du projet est **d’extraire des informations pertinentes
 * **Power Query** a été utilisé pour **transformer et nettoyer** les données provenant de la base **MySQL**.
 * **Power BI** a servi à modéliser les **relations entre les tables**, créer des **visualisations interactives** et des **tableaux de bord**.
 * **Python** a été mobilisé pour effectuer des **analyses statistiques** avancées.
+* **SQL** pour des jointures complexes sur les tables
 
 ---
 
