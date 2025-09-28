@@ -1,21 +1,20 @@
-# Description du projet
+# Project Description
 
+As part of this project, I worked on analyzing business data from the **classicmodels** database, which represents the operations of a retailer specializing in classic car models. This database provides detailed information about **customers**, their **orders**, their **payments**, as well as **products**, their **classification**, **employees**, and **offices**.
 
-Dans le cadre de ce projet, j’ai travaillé sur l’analyse des données commerciales issues de la base de données **classicmodels**, une base représentant les activités d’un détaillant de maquettes de voitures classiques. Cette base contient des informations complètes sur les **clients**, leurs **commandes**, leurs **paiements**, ainsi que sur les **produits**, leur **classification**, les **employés** et les **bureaux**.
+The main objective of the project was to **extract relevant insights** in order to better understand sales, employee performance, and revenue distribution. To achieve this:
 
-L’objectif principal du projet est **d’extraire des informations pertinentes** afin de mieux comprendre les ventes, la performance des employés et la répartition du chiffre d’affaires. Pour cela :
-
-* **Power Query** a été utilisé pour **transformer et nettoyer** les données provenant de la base **MySQL**.
-* **Power BI** a servi à modéliser les **relations entre les tables**, créer des **visualisations interactives** et des **tableaux de bord**.
-* **Python** a été mobilisé pour effectuer des **analyses statistiques** avancées.
-* **SQL** pour des jointures complexes sur les tables
+* **Power Query** was used to **transform and clean** the data retrieved from the **MySQL** database.
+* **Power BI** was used to model **table relationships**, create **interactive visualizations**, and design **dashboards**.
+* **Python** was applied to perform **advanced statistical analyses**.
+* **SQL** was used for complex **table joins**.  
 
 
 
 ![](/Ressources/Visuel.png)
 
 
-# Architecture du répertoire
+# Repository Architecture
 
 
 ```plaintext
@@ -39,49 +38,54 @@ L’objectif principal du projet est **d’extraire des informations pertinentes
 
 ```
 
-# Rapport
+# Report
 
 ### SQL
 
-* Nombre d’enregistrements dans chaque table :
 
-    * 23 employés
-    * 7 bureaux
-    * 122 clients
-    * 326 commandes
-    * 273 paiements
-    * 2 996 détails de commande
-    * 110 produits
-    * 7 lignes de produits
+* Number of records in each table:
 
-* On recense **7 intitulés de poste différents** (President, VP Sales, VP Marketing, Sales Manager (APAC), Sales Manager (EMEA), Sales Manager (NA), Sales Rep). Le poste de **Sales Rep** est le plus représenté avec **17 occurrences**.
+  * 23 employees
+  * 7 offices
+  * 122 customers
+  * 326 orders
+  * 273 payments
+  * 2,996 order details
+  * 110 products
+  * 7 product lines
 
-* Les **bureaux** sont situés dans **5 pays différents** (États-Unis, France, Royaume-Uni, Japon, Australie). Il y a **3 bureaux aux États-Unis**, tandis qu’on en trouve **un seul dans chacun des autres pays**.
+* There are **7 different job titles** (President, VP Sales, VP Marketing, Sales Manager (APAC), Sales Manager (EMEA), Sales Manager (NA), Sales Rep). The role of **Sales Rep** is the most common, with **17 occurrences**.
 
-* Les **clients** sont répartis dans **28 pays différents**. **50 % des clients** sont situés aux **États-Unis, en Allemagne et en France**.
+* The **offices** are located in **5 different countries** (United States, France, United Kingdom, Japan, Australia). There are **3 offices in the United States**, while each of the other countries has **only one office**.
 
-* Les **commandes** présentent **6 statuts différents** (Shipped, Resolved, Cancelled, On Hold, Disputed, In Process). Parmi les **326 commandes**, **303 ont été expédiées (Shipped)**.
+* The **customers** are spread across **28 different countries**. **50% of them** are located in the **United States, Germany, and France**.
 
+* The **orders** have **6 different statuses** (Shipped, Resolved, Cancelled, On Hold, Disputed, In Process). Out of the **326 orders**, **303 were shipped**.
+
+---
 
 ### Power Query
 
-* Suppression des colonnes (autres que les clés étrangères) qui font référence à une autre table
-* Modification des noms de colonnes
-* Vérification et modification des types de colonnes
-* Suppression des colonnes non pertinentes comme **"image"** et **"htmlDescription"** dans **productlines**
-* Suppression des lignes vides et des doublons
+* Removed columns (other than foreign keys) that referenced another table
+* Renamed columns for clarity
+* Verified and adjusted column data types
+* Removed irrelevant columns such as **“image”** and **“htmlDescription”** from **productlines**
+* Deleted empty rows and duplicates
 
+---
 
 ### Power BI
 
-* Le produit "**1992 Ferrari 360 Spider red**" domine largement avec environ 50 unités vendues, bien au-dessus des autres produits qui oscillent entre 20 et 30 unités.
-* Deux pics majeurs sont observés pour le chiffre d'affaires: autour de **Novembre 2003** (proche de 1M) et **Novembre 2004** (légèrement inférieur à 1M). Ces périodes indiquent des augmentations marquées du chiffre d'affaires.
-* Les clients "**Euro+ Shopping Channel**" et "**Mini Gifts Distributors Ltd.**" réalise le plus d'achat de prouduits
-* Les clients sont éparpignés un peu partout dans le monde, cependant, la plupart (36) sont basés aux **USA**, suivi de **l'Allemagne** (13) et de la **France** (12)
-* **Leslie** et **Gérard** sont les employés qui réalisent le plus de chiffre de d'Affaire
-* Le bureau situé à **Paris** est celui qui génèrent le plus de chiffre d'affaires
+* The product **“1992 Ferrari 360 Spider red”** stands out with around **50 units sold**, far above other products which range between 20 and 30 units.
+* Two major revenue peaks were observed: around **November 2003** (close to $1M) and **November 2004** (slightly below $1M), indicating significant increases in sales during these periods.
+* The customers **“Euro+ Shopping Channel”** and **“Mini Gifts Distributors Ltd.”** made the highest purchases.
+* Customers are distributed worldwide, but most are based in the **USA (36)**, followed by **Germany (13)** and **France (12)**.
+* **Leslie** and **Gérard** are the top-performing employees in terms of revenue.
+* The office located in **Paris** generates the highest revenue.
 
-### Analyse Statistique (Tests d'Hypothèses)
+---
 
-* **On ne peut pas rejetter** l'hypothèse selon laquelle, la moyenne du chiffre d’affaires entre les bureaux en Europe et ceux en Amériques soient différents
-* **On peut rejetter** l'hypothèse selon laquelle les ventes diffèrent significativement entre plusieurs lignes de produits
+### Statistical Analysis (Hypothesis Testing)
+
+* We **cannot reject** the hypothesis that the average revenue between European and American offices is the same.
+* We **can reject** the hypothesis that sales are similar across different product lines, meaning that product line significantly impacts sales.
